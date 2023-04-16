@@ -15,7 +15,7 @@ MonoBehaviour:
   background: {fileID: 21300000, guid: 8dd532f10afcc4e71ace700ecbbb5e66, type: 3}
   nextScene: {fileID: 11400000, guid: d2b3998794d114059a3b81dd5cf2a39e, type: 2}
   sentences:
-  - speaker: {fileID: 11400000, guid: 3d8da82bf166f4c1097e262cdcd9e647, type: 2}
+  - speaker: {fileID: 11400000, guid: 2b9b3a12c78fe4780bac346fe73d7551, type: 2}
     text: Qui est la
   - speaker: {fileID: 11400000, guid: 2b9b3a12c78fe4780bac346fe73d7551, type: 2}
     text: ...
