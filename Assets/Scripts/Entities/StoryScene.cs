@@ -3,11 +3,13 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "StoryScene", menuName = "Data/StoryScene")]
 [System.Serializable]
-public class StoryScene : ScriptableObject
+public class StoryScene : GameScene
 {
+
+    // Public
     [Header("References")]
     public Sprite background;
-    public StoryScene nextScene;
+    public GameScene nextScene;
     public List<Sentence> sentences;
 
     [System.Serializable]
@@ -16,4 +18,8 @@ public class StoryScene : ScriptableObject
         public Speaker speaker;
         public string text;
     }
+}
+
+public class GameScene : ScriptableObject
+{
 }

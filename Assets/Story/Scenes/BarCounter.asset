@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BarCounter
   m_EditorClassIdentifier: 
   background: {fileID: 21300000, guid: 0cf37199378e444d48d7b046c20b8cc8, type: 3}
-  nextScene: {fileID: 11400000, guid: b6c624d2d59f642ae9c9fd7486915851, type: 2}
+  nextScene: {fileID: 11400000, guid: b8f168aafc9cc42099ebe08a8661ab8d, type: 2}
   sentences:
   - speaker: {fileID: 11400000, guid: 3d8da82bf166f4c1097e262cdcd9e647, type: 2}
     text: Salut !

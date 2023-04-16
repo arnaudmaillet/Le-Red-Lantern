@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class BackgroundController : MonoBehaviour
 {
+    // Public
     [Header("References")]
     public bool isSwitching = false;
     public Image background1;
