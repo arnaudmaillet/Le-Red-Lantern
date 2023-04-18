@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
     [Header("References")]
     public GameScene currentScene;
     public ScriptBoxController scriptBox;
-    public BackgroundController background;
+    public SpriteSwitcher background;
     public ChoiceController choiceController;
 
     // Private
@@ -59,7 +59,7 @@ public class GameController : MonoBehaviour
         if (scene is StoryScene) 
         {
             StoryScene storyScene = scene as StoryScene;
-            background.switchBackground(storyScene.background);
+            background.SwitchImage(storyScene.background);
             yield return new WaitForSeconds(1f);
             scriptBox.ClearText();
             scriptBox.Show();
