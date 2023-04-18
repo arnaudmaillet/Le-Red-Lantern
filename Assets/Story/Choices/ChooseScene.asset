@@ -17,5 +17,3 @@ MonoBehaviour:
     nextScene: {fileID: 11400000, guid: d2b3998794d114059a3b81dd5cf2a39e, type: 2}
   - label: 2 - Lui repondre "Tu est gros, tu ressembles a une vache"
     nextScene: {fileID: 11400000, guid: b6c624d2d59f642ae9c9fd7486915851, type: 2}
-  - label: 3 - Lui repondre "Tu est gros, tu ressembles a une vache"
-    nextScene: {fileID: 11400000, guid: b6c624d2d59f642ae9c9fd7486915851, type: 2}

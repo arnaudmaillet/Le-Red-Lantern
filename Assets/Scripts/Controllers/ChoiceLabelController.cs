@@ -43,12 +43,10 @@ public class ChoiceLabelController : MonoBehaviour, IPointerClickHandler, IPoint
     public void OnPointerEnter(PointerEventData eventData)
     {
         textMesh.color = hoverColor;
-        Debug.Log("Enter");
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         textMesh.color = defaultColor;
-        Debug.Log("Exit");
     }
 }

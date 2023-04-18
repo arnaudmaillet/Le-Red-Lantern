@@ -18,16 +18,11 @@ MonoBehaviour:
   - speaker: {fileID: 11400000, guid: 3d8da82bf166f4c1097e262cdcd9e647, type: 2}
     text: Salut !
     actions:
-    - speaker: {fileID: 11400000, guid: 3d8da82bf166f4c1097e262cdcd9e647, type: 2}
+    - speaker: {fileID: 0}
       spriteIndex: 0
-      actionType: 1
-      coords: {x: 250, y: 0}
+      actionType: 0
+      coords: {x: 0, y: 0}
       moveSpeed: 0
   - speaker: {fileID: 11400000, guid: 2b9b3a12c78fe4780bac346fe73d7551, type: 2}
     text: Bonjour !
-    actions:
-    - speaker: {fileID: 11400000, guid: 3d8da82bf166f4c1097e262cdcd9e647, type: 2}
-      spriteIndex: 0
-      actionType: 3
-      coords: {x: 0, y: 0}
-      moveSpeed: 0
+    actions: []
