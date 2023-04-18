@@ -21,7 +21,7 @@ public class GameController : MonoBehaviour
         if (currentScene is StoryScene) {
             StoryScene storyScene = currentScene as StoryScene;
             scriptBox.PlayScene(storyScene);
-            background.setImage(storyScene.background);
+            background.SetImage(storyScene.background);
         }
     }
 

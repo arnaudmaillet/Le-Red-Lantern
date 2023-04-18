@@ -80,7 +80,7 @@ public class ScriptBoxController : MonoBehaviour
         {
             barText.text += sentence[wordIndex];
             yield return new WaitForSeconds(0.05f);
-            if (++wordIndex >= sentence.Length)
+            if (++wordIndex == sentence.Length)
             {
                 state = State.COMPLETED;
                 break;
