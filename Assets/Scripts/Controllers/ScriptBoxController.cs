@@ -11,6 +11,8 @@ public class ScriptBoxController : MonoBehaviour
     public TextMeshProUGUI barText;
     public TextMeshProUGUI speakerText;
     public StoryScene currentScene;
+    public Dictionary<Speaker, SpriteController> sprites;
+    public GameObject spritePrefab;
 
     // Private
     private int sentenceIndex = -1;
@@ -21,6 +23,7 @@ public class ScriptBoxController : MonoBehaviour
 
     void Start()
     {
+        sprites = new Dictionary<Speaker, SpriteController>();
         animator = GetComponent<Animator>();
     }
 
@@ -36,7 +39,7 @@ public class ScriptBoxController : MonoBehaviour
         StartCoroutine(TypeSentence(currentScene.sentences[++sentenceIndex].text));
         speakerText.text = currentScene.sentences[sentenceIndex].speaker.speakerName;
         speakerText.color = currentScene.sentences[sentenceIndex].speaker.textColor;
-
+        ActSpeakers();
     }
 
     public void Hide()
@@ -82,6 +85,61 @@ public class ScriptBoxController : MonoBehaviour
                 state = State.COMPLETED;
                 break;
             }
+        }
+    }
+
+    private void ActSpeakers()
+    {
+        List<StoryScene.Sentence.Action> actions = currentScene.sentences[sentenceIndex].actions;
+        for (int i = 0; i < actions.Count; i++)
+        {
+            ActSpeaker(actions[i]);
+        }
+    }
+
+    private void ActSpeaker(StoryScene.Sentence.Action action)
+    {
+        SpriteController controller = null;
+        switch (action.actionType)
+        {
+            case StoryScene.Sentence.Action.Type.APPEAR:
+                if (!sprites.ContainsKey(action.speaker))
+                {
+                    controller = Instantiate(action.speaker.prefab.gameObject, spritePrefab.transform).GetComponent<SpriteController>();
+                    sprites.Add(action.speaker, controller);
+                }
+                else
+                {
+                    controller = sprites[action.speaker];
+                }
+                controller.Setup(action.speaker.sprites[action.spriteIndex]);
+                controller.Show(action.coords);
+                return;
+            case StoryScene.Sentence.Action.Type.MOVE:
+                if (sprites.ContainsKey(action.speaker))
+                {
+                    controller = sprites[action.speaker];
+                    controller.Move(action.coords, action.moveSpeed);
+                }
+                break;
+            case StoryScene.Sentence.Action.Type.DISAPPEAR:
+                if (sprites.ContainsKey(action.speaker))
+                {
+                    controller = sprites[action.speaker];
+                    controller.Hide();
+                }
+                break;
+            case StoryScene.Sentence.Action.Type.NONE:
+                if (sprites.ContainsKey(action.speaker))
+                {
+                    controller = sprites[action.speaker];
+                }
+                break;
+        }
+
+        if (controller != null)
+        {
+            controller.SwitchSprite(action.speaker.sprites[action.spriteIndex]);
         }
     }
 }

@@ -14,3 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: Pirate
   textColor: {r: 1, g: 1, b: 1, a: 1}
+  sprites:
+  - {fileID: 21300000, guid: de9188e9afd2e4d158a063f5e70665ff, type: 3}
+  - {fileID: 21300000, guid: 2c34bb4a204fb45afb681e542fd21751, type: 3}
+  prefab: {fileID: 7583139015094341125, guid: 66766e3269e9543c599822dd34842641, type: 3}
