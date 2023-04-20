@@ -51,24 +51,24 @@ public class GameController : MonoBehaviour
                     scriptBox.SpeedUp();
                 }
             }
-        }
-        if (Input.GetMouseButtonDown(1))
-        {
-            if (scriptBox.isFirstSentence())
+            if (Input.GetMouseButtonDown(1))
             {
-                if (history.Count > 1)
+                if (scriptBox.isFirstSentence())
                 {
-                    scriptBox.StopTyping();
-                    scriptBox.HideSprites();
-                    history.RemoveAt(history.Count - 1);
-                    StoryScene scene = history[history.Count - 1];
-                    history.RemoveAt(history.Count - 1);
-                    PlayScene(scene, scene.sentences.Count - 2, false);
+                    if (history.Count > 1)
+                    {
+                        scriptBox.StopTyping();
+                        scriptBox.HideSprites();
+                        history.RemoveAt(history.Count - 1);
+                        StoryScene scene = history[history.Count - 1];
+                        history.RemoveAt(history.Count - 1);
+                        PlayScene(scene, scene.sentences.Count - 2, false);
+                    }
+                } else {
+                    scriptBox.GoBack();
                 }
-            } else {
-                scriptBox.GoBack();
-            }
-        } 
+            } 
+        }
     }
 
     public void PlayScene(GameScene scene, int sentenceIndex = -1, bool isAnimated = true)
