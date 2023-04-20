@@ -130,7 +130,7 @@ public class ScriptBoxController : MonoBehaviour
                 }
                 break;
             case StoryScene.Sentence.Action.Type.NONE:
-                if (sprites.ContainsKey(action.speaker))
+                if (sprites.ContainsKey(key: action.speaker))
                 {
                     controller = sprites[action.speaker];
                 }
