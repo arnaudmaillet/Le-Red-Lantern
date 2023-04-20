@@ -16,13 +16,23 @@ MonoBehaviour:
   nextScene: {fileID: 11400000, guid: b8f168aafc9cc42099ebe08a8661ab8d, type: 2}
   sentences:
   - speaker: {fileID: 11400000, guid: 3d8da82bf166f4c1097e262cdcd9e647, type: 2}
-    text: Salut !
+    text: Salut ! fvdsugrigsrg r rwaghrwiag rghuhgrghuri gfhdugheriug iuhgrwhu grruegerughrrrgegrg
+      erg ehgegeg e g er egherhgr e eeg
     actions:
-    - speaker: {fileID: 0}
+    - speaker: {fileID: 11400000, guid: 3d8da82bf166f4c1097e262cdcd9e647, type: 2}
       spriteIndex: 0
-      actionType: 0
-      coords: {x: 0, y: 0}
+      actionType: 1
+      coords: {x: 250, y: 0}
       moveSpeed: 0
+    music: {fileID: 8300000, guid: 0252b8c63d9c24a52a170f6395524e60, type: 3}
+    sound: {fileID: 0}
   - speaker: {fileID: 11400000, guid: 2b9b3a12c78fe4780bac346fe73d7551, type: 2}
     text: Bonjour !
-    actions: []
+    actions:
+    - speaker: {fileID: 11400000, guid: 3d8da82bf166f4c1097e262cdcd9e647, type: 2}
+      spriteIndex: 0
+      actionType: 3
+      coords: {x: 250, y: 0}
+      moveSpeed: 0
+    music: {fileID: 8300000, guid: 0252b8c63d9c24a52a170f6395524e60, type: 3}
+    sound: {fileID: 0}
