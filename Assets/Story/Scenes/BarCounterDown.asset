@@ -17,7 +17,31 @@ MonoBehaviour:
   sentences:
   - speaker: {fileID: 11400000, guid: 2b9b3a12c78fe4780bac346fe73d7551, type: 2}
     text: Qui est la
+    actions:
+    - speaker: {fileID: 11400000, guid: 3d8da82bf166f4c1097e262cdcd9e647, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: 250, y: 0}
+      moveSpeed: 0
+    music: {fileID: 8300000, guid: c3d7da9ec007740a49840e907c5d08a3, type: 3}
+    sound: {fileID: 0}
   - speaker: {fileID: 11400000, guid: 2b9b3a12c78fe4780bac346fe73d7551, type: 2}
     text: ...
+    actions:
+    - speaker: {fileID: 11400000, guid: 3d8da82bf166f4c1097e262cdcd9e647, type: 2}
+      spriteIndex: 1
+      actionType: 0
+      coords: {x: 250, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
   - speaker: {fileID: 11400000, guid: 3d8da82bf166f4c1097e262cdcd9e647, type: 2}
     text: Allo?
+    actions:
+    - speaker: {fileID: 0}
+      spriteIndex: 1
+      actionType: 3
+      coords: {x: 250, y: 0}
+      moveSpeed: 0
+    music: {fileID: 8300000, guid: c3d7da9ec007740a49840e907c5d08a3, type: 3}
+    sound: {fileID: 0}
