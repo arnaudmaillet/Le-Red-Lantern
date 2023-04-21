@@ -16,7 +16,7 @@ public class ProgressBarController : MonoBehaviour
 
     void Start()
     {
-        fillAmount = 0;
+        fillAmount = 0.05F;
     }
 
     void Update()
