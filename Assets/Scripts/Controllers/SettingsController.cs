@@ -1,17 +1,20 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 using TMPro;
 
 public class SettingsController : MonoBehaviour
 {
     [SerializeField] private TMP_Dropdown resolutionDropdown;
     [SerializeField] private Slider volumeSlider;
-    public TMP_Text volumeTxt;
+    public TextMeshProUGUI volumeTxt;
+    public AudioMixer musicMixer;
 
     private void Start()
     {
         resolutionDropdown.value = PlayerPrefs.GetInt("Resolution", 2);
-        volumeSlider.value = PlayerPrefs.GetFloat("Volume", 0.5f);
+        volumeTxt.SetText("Volume: 50%");
+        musicMixer.SetFloat("volume", 0.5f);
         SetResolution();
     }
 
@@ -34,9 +37,10 @@ public class SettingsController : MonoBehaviour
         }
     }
 
-    public void SetVolume()
+    public void OnMusicChanged(float value)
     {
-        AudioListener.volume = volumeSlider.value;
-        volumeTxt.text = "Volume: " + (volumeSlider.value * 100).ToString("00") + "%";
+        // convert the value to a percentage
+        volumeTxt.SetText("Volume: " + value + "%");
+        musicMixer.SetFloat("volume", -50 + value / 2);
     }
 }
