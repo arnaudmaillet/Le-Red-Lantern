@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class GameController : MonoBehaviour
     public ChoiceController choiceController;
     public AudioController audioController;
 
+    public DataHolder data;
+
+    public string menuScene;
+
     // Private
     private State state = State.IDLE;
     private List<StoryScene> history = new List<StoryScene>();
@@ -20,12 +25,23 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
+        if (SaveManager.IsGameSaved())
+        {
+            SaveData data = SaveManager.LoadGame();
+            data.prevScenes.ForEach(scene => {
+                history.Add(this.data.scenes[scene] as StoryScene);
+            });
+            currentScene = history[history.Count - 1];
+            history.RemoveAt(history.Count - 1);
+            scriptBox.SetSentenceIndex(data.sentence - 1);
+        }
+
         if (currentScene is StoryScene) {
             StoryScene storyScene = currentScene as StoryScene;
             history.Add(storyScene);
-            scriptBox.PlayScene(storyScene);
+            scriptBox.PlayScene(storyScene, scriptBox.GetSentenceIndex());
             background.SetImage(storyScene.background);
-            PlayAudio(storyScene.sentences[0]);
+            PlayAudio(storyScene.sentences[scriptBox.GetSentenceIndex()]);
         }
     }
 
@@ -67,7 +83,18 @@ public class GameController : MonoBehaviour
                 } else {
                     scriptBox.GoBack();
                 }
-            } 
+            }
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                List<int> historyIndicies = new List<int>();
+                history.ForEach(scene => historyIndicies.Add(this.data.scenes.IndexOf(scene)));
+                SaveData data = new SaveData{
+                    sentence = scriptBox.GetSentenceIndex(),
+                    prevScenes = historyIndicies
+                };
+                SaveManager.SaveGame(data);
+                SceneManager.LoadScene(menuScene);
+            }
         }
     }
 

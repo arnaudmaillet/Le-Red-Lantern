@@ -34,6 +34,11 @@ public class ScriptBoxController : MonoBehaviour
         return sentenceIndex;
     }
 
+    public void SetSentenceIndex(int sentenceIndex)
+    {
+        this.sentenceIndex = sentenceIndex;
+    }
+
     public void PlayScene(StoryScene scene, int sentenceIndex = -1, bool isAnimated = true)
     {
         currentScene = scene;

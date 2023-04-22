@@ -1739,6 +1739,8 @@ MonoBehaviour:
   background: {fileID: 1061594436397672037}
   choiceController: {fileID: 1061594436034169578}
   audioController: {fileID: 7682885757024867350}
+  data: {fileID: 11400000, guid: 2d5ffce206e00d24994ce376a7b6923d, type: 2}
+  menuScene: Menu
 --- !u!224 &1061594434886188558
 RectTransform:
   m_ObjectHideFlags: 0
