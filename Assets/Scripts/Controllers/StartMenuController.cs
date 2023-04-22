@@ -6,7 +6,7 @@ using TMPro;
 
 public class StartMenuController : MonoBehaviour
 {
-    public string GameScene;
+    public string gameScene;
 
     [SerializeField] private TMP_Dropdown resolutionDropdown;
     [SerializeField] private Slider volumeSlider;
@@ -16,6 +16,8 @@ public class StartMenuController : MonoBehaviour
     public AudioMixer musicMixer;
     public AudioMixer soundsMixer;
 
+    public Button loadButton;
+
     private Animator animator;
 
     private int _window = 0;
@@ -23,8 +25,25 @@ public class StartMenuController : MonoBehaviour
 
     private void Start(){
         animator = GetComponent<Animator>();
-        resolutionDropdown.value = PlayerPrefs.GetInt("Resolution", 2);
+
+
+        // affiche le volume de musicMixer
+        float volume = 0;
+        musicMixer.GetFloat("volume", out volume);
+        volumeSlider.value = Mathf.Pow(10, volume / 20);
+        OnMusicChanged(volumeSlider.value);
+
+        // affiche le volume de soundsMixer
+        float sound = 0;
+        soundsMixer.GetFloat("volume", out sound);
+        soundSlider.value = Mathf.Pow(10, sound / 20);
+        OnSoundsChanged(soundSlider.value);
+
+        // affiche la résolution
+        resolutionDropdown.value = PlayerPrefs.GetInt("resolution", 2);
         SetResolution();
+
+        loadButton.interactable = SaveManager.IsGameSaved();
     }
 
     public void Update(){
@@ -35,7 +54,12 @@ public class StartMenuController : MonoBehaviour
     }
 
     public void NewGame(){
-        SceneManager.LoadScene(GameScene, LoadSceneMode.Single);
+        SaveManager.ClearSaveGame();
+        Load();
+    }
+
+    public void Load(){
+        SceneManager.LoadScene(gameScene, LoadSceneMode.Single);
     }
 
     public void ExitGame(){
@@ -74,13 +98,23 @@ public class StartMenuController : MonoBehaviour
     {
         percentage = Mathf.Round(value * 100);
         volumeTxt.SetText("Volume: " + percentage + "%");
-        musicMixer.SetFloat("volume", Mathf.Log10(value) * 20);
+        if (value == 0){
+            musicMixer.SetFloat("volume", -80);
+            volumeTxt.SetText("Volume: Mute");
+        }
+        else
+            musicMixer.SetFloat("volume", Mathf.Log10(value) * 20);
     }
 
     public void OnSoundsChanged(float value)
     {
         percentage = Mathf.Round(value * 100);
         soundTxt.SetText("Sounds: " + percentage + "%");
+        if (value == 0){
+            soundsMixer.SetFloat("volume", -80);
+            soundTxt.SetText("Sounds: Mute");
+        }
+        else
         soundsMixer.SetFloat("volume", Mathf.Log10(value) * 20);
     }
 }
