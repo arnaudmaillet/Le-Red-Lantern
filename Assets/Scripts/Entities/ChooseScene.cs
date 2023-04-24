@@ -12,5 +12,6 @@ public class ChooseScene : GameScene
     {
         public string label;
         public StoryScene nextScene;
+        public bool fade;
     }
 }

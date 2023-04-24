@@ -10,6 +10,7 @@ public class ScriptBoxController : MonoBehaviour
     [Header("References")]
     public TextMeshProUGUI barText;
     public TextMeshProUGUI speakerText;
+    public AudioSource voicePlayer;
     public StoryScene currentScene;
     public Dictionary<Speaker, SpriteController> sprites;
     public GameObject spritePrefab;
@@ -118,10 +119,21 @@ public class ScriptBoxController : MonoBehaviour
 
     private void PlaySentence(bool isAnimated = true)
     {
+        StoryScene.Sentence sentence = currentScene.sentences[sentenceIndex];
         speedFactor = 1f;
-        typingCoroutine = StartCoroutine(TypeSentence(currentScene.sentences[sentenceIndex].text));
-        speakerText.text = currentScene.sentences[sentenceIndex].speaker.speakerName;
-        speakerText.color = currentScene.sentences[sentenceIndex].speaker.textColor;
+        typingCoroutine = StartCoroutine(TypeSentence(sentence.text));
+        speakerText.text = sentence.speaker.speakerName;
+        speakerText.color = sentence.speaker.textColor;
+
+        if (sentence.audio)
+        {
+            voicePlayer.clip = sentence.audio;
+            voicePlayer.Play();
+        }
+        else
+        {
+            voicePlayer.Stop();
+        }
         ActSpeakers(isAnimated);
     }
 
