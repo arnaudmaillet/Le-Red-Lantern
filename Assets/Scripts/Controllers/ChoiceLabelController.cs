@@ -13,6 +13,7 @@ public class ChoiceLabelController : MonoBehaviour, IPointerClickHandler, IPoint
     private StoryScene scene;
     private TextMeshProUGUI textMesh;
     private ChoiceController controller;
+    private bool isAnimated;
 
     void Awake()
     {
@@ -28,6 +29,7 @@ public class ChoiceLabelController : MonoBehaviour, IPointerClickHandler, IPoint
     public void Setup(ChooseScene.ChooseLabel label, ChoiceController controller, float y)
     {
         scene = label.nextScene;
+        isAnimated = label.fade;
         textMesh.text = label.label;
         this.controller = controller;
         Vector3 position = textMesh.rectTransform.localPosition;
@@ -37,7 +39,7 @@ public class ChoiceLabelController : MonoBehaviour, IPointerClickHandler, IPoint
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        controller.PerformChoice(scene);
+        controller.PerformChoice(scene, isAnimated: isAnimated);
     }
 
     public void OnPointerEnter(PointerEventData eventData)

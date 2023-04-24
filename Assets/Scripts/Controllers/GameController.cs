@@ -122,16 +122,17 @@ public class GameController : MonoBehaviour
             if (isAnimated)
             {
                 background.SwitchImage(storyScene.background);
-                yield return new WaitForSeconds(1f);
-                scriptBox.ClearText();
-                scriptBox.Show();
-                yield return new WaitForSeconds(1f);
             }
             else 
             {
                 background.SetImage(storyScene.background);
-                scriptBox.ClearText();
             }
+            
+            yield return new WaitForSeconds(1f);
+            scriptBox.ClearText();
+            scriptBox.Show();
+            yield return new WaitForSeconds(1f);
+
             scriptBox.PlayScene(storyScene, sentenceIndex, isAnimated);
             state = State.IDLE;
         } else if (scene is ChooseScene)

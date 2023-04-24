@@ -40,9 +40,9 @@ public class ChoiceController : MonoBehaviour
         rectTransform.sizeDelta = size;
     }
 
-    public void PerformChoice(StoryScene scene)
+    public void PerformChoice(StoryScene scene, bool isAnimated = true)
     {
-        gameController.PlayScene(scene);
+        gameController.PlayScene(scene, isAnimated: isAnimated);
         animator.SetTrigger("Hide");
     }
 

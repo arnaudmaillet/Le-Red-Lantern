@@ -701,9 +701,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1708.6216, y: 1176.8529, z: -574.6006}
+    m_Target: {x: 1580.1335, y: 1239.0768, z: -17.130455}
     speed: 2
-    m_Value: {x: 1708.6216, y: 1176.8529, z: -574.6006}
+    m_Value: {x: 1580.1335, y: 1239.0768, z: -17.130455}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -754,9 +754,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1499.4387
+    m_Target: 1580.9147
     speed: 2
-    m_Value: 1499.4387
+    m_Value: 1580.9147
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -830,7 +830,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 8}
+        m_ClientGUIView: {fileID: 0}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -858,10 +858,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1154.6667
-    y: 90.66667
-    width: 952.6666
-    height: 734.3333
+    x: 400.5
+    y: 66
+    width: 748.5
+    height: 490
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -887,10 +887,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -1280
-    m_HBaseRangeMax: 1280
-    m_VBaseRangeMin: -720
-    m_VBaseRangeMax: 720
+    m_HBaseRangeMin: -960
+    m_HBaseRangeMax: 960
+    m_VBaseRangeMin: -540
+    m_VBaseRangeMax: 540
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -908,23 +908,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 952.6666
-      height: 713.3333
-    m_Scale: {x: 0.3721354, y: 0.3721354}
-    m_Translation: {x: 476.3333, y: 356.66666}
+      width: 748.5
+      height: 469
+    m_Scale: {x: 0.38984376, y: 0.38984376}
+    m_Translation: {x: 374.25, y: 234.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -1280
-      y: -958.4325
-      width: 2560
-      height: 1916.865
+      x: -960
+      y: -601.523
+      width: 1920
+      height: 1203.046
     m_MinimalGUI: 1
-  m_defaultScale: 0.3721354
-  m_LastWindowPixelSize: {x: 1429, y: 1101.5}
+  m_defaultScale: 0.38984376
+  m_LastWindowPixelSize: {x: 1497, y: 980}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -1064,9 +1064,9 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 348d8a11ab0f2684bba265d25888c4cb, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: 6b011b2054af54b84a05a09bcd5e5a99, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: 3213488241995725764, guid: 348d8a11ab0f2684bba265d25888c4cb, type: 2}
+  - m_Target: {fileID: 188060232883956045, guid: 6b011b2054af54b84a05a09bcd5e5a99, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -1120,15 +1120,15 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Controllers
+    - Assets/Story/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Controllers
+  - Assets/Story/Scenes
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\coren\Desktop\Le-Red-Lantern
+  m_LastProjectPath: /Users/arnaud/Documents/Unity/Le Red Lantern
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
@@ -1188,8 +1188,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: 605f0000
+    m_LastClickedInstanceID: 24416
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000de78000020cb0000
     m_RenameOverlay:
