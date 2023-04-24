@@ -23,8 +23,18 @@ public class GameController : MonoBehaviour
     private List<StoryScene> history = new List<StoryScene>();
     private enum State { IDLE, ANIMATE, CHOICE };
 
+    private ProgressBarController progressBarController;
+
     void Start()
     {
+        // ----------------- test progressBar
+        progressBarController = FindObjectOfType<ProgressBarController>();
+        progressBarController.AddFillAmount(0.4f, 1);
+        progressBarController.AddFillAmount(0.1f, 2);
+        Debug.Log(progressBarController.fillAmount[1]);
+        // ----------------- test progressBar
+
+
         if (SaveManager.IsGameSaved())
         {
             SaveData data = SaveManager.LoadGame();

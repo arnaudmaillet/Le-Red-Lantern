@@ -3,7 +3,6 @@ using TMPro;
 
 public class ChoiceController : MonoBehaviour
 {
-
     // Public
     [Header("References")]
     public ChoiceLabelController label;

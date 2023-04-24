@@ -5,46 +5,81 @@ using UnityEngine.UI;
 
 public class ProgressBarController : MonoBehaviour
 {
-    public Image ForgroundProgressBar;
-    public float fillAmount;
 
-    public float FillAmount
-    {
-        get { return fillAmount; }
-        set { fillAmount = value; }
-    }
+    // tableau d'image pour les progress bar
+    public Image[] ForgroundProgressBar;
 
-    void Start()
+    // tableau de float pour les progress bar
+    public float[] fillAmount;
+
+    // min and max values for the progress bar
+    public float min = 0.05f;
+    public float max = 1f;
+
+    public void Start()
     {
-        fillAmount = 0.05F;
+        // set the min and max values for the progress bar
+        for (int i = 0; i < ForgroundProgressBar.Length; i++)
+        {
+            ForgroundProgressBar[i].fillAmount = min;
+        }
     }
 
     void Update()
     {
-        ForgroundProgressBar.fillAmount = fillAmount;
+        // update the progress bar
+        for (int i = 0; i < ForgroundProgressBar.Length; i++)
+        {
+            ForgroundProgressBar[i].fillAmount = fillAmount[i];
+        }
     }
 
-    public void SetFillAmount(float amount)
+    public void AddFillAmount(float amount, int index)
     {
-        fillAmount = amount;
+        fillAmount[index] += amount;
         Update();
     }
 
-    public void ResetFillAmount()
+    public void RemoveFillAmount(float amount, int index)
     {
-        fillAmount = 0;
+        fillAmount[index] -= amount;
         Update();
     }
 
-    public void AddFillAmount(float amount)
-    {
-        fillAmount += amount;
-        Update();
-    }
+    // public void AddFillAmountVampire(float amount)
+    // {
+    //     fillAmount[0] += amount;
+    //     Update();
+    // }
 
-    public void RemoveFillAmount(float amount)
-    {
-        fillAmount -= amount;
-        Update();
-    }
+    // public void AddFillAmountCops(float amount)
+    // {
+    //     fillAmount[1] += amount;
+    //     Update();
+    // }
+
+    // public void AddFillAmountPirate(float amount)
+    // {
+    //     fillAmount[2] += amount;
+    //     Update();
+    // }
+
+    // public void RemoveFillAmountVampire(float amount)
+    // {
+    //     fillAmount[0] -= amount;
+    //     Update();
+    // }
+
+    // public void RemoveFillAmountCops(float amount)
+    // {
+    //     fillAmount[1] -= amount;
+    //     Update();
+    // }
+
+    // public void RemoveFillAmountPirate(float amount)
+    // {
+    //     fillAmount[2] -= amount;
+    //     Update();
+    // }
+
 }
