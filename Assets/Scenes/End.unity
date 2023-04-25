@@ -219,8 +219,8 @@ GameObject:
   - component: {fileID: 778246570}
   - component: {fileID: 778246569}
   - component: {fileID: 778246568}
-  - component: {fileID: 778246572}
   - component: {fileID: 778246573}
+  - component: {fileID: 778246574}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -311,27 +311,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &778246572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 778246567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3c24c07ea1274cbfbab68210cd33f8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameScene: Game
-  resolutionDropdown: {fileID: 0}
-  volumeSlider: {fileID: 0}
-  soundSlider: {fileID: 0}
-  volumeTxt: {fileID: 0}
-  soundTxt: {fileID: 0}
-  musicMixer: {fileID: 24100000, guid: 29fef765742260a4eb8942818831756f, type: 2}
-  soundsMixer: {fileID: 24100000, guid: 61a3218e69004e746a37265f81212ab7, type: 2}
-  loadButton: {fileID: 0}
 --- !u!95 &778246573
 Animator:
   serializedVersion: 4
@@ -352,6 +331,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &778246574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778246567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62dd3d0d09d296f48a5864c78810080b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameScene: game
 --- !u!1 &819600242
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,9 +1063,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 778246572}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: ExitGame
+      - m_Target: {fileID: 778246574}
+        m_TargetAssemblyTypeName: EndGameController, Assembly-CSharp
+        m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1275,9 +1267,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 778246572}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: NewGame
+      - m_Target: {fileID: 778246574}
+        m_TargetAssemblyTypeName: EndGameController, Assembly-CSharp
+        m_MethodName: ReStart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
