@@ -9,9 +9,6 @@ public class ProgressBarController : MonoBehaviour
     // tableau d'image pour les progress bar
     public Image[] ForgroundProgressBar;
 
-    // tableau de float pour les progress bar
-    public float[] fillAmount;
-
     // min and max values for the progress bar
     public float min = 0.05f;
     public float max = 1f;
@@ -30,20 +27,25 @@ public class ProgressBarController : MonoBehaviour
         // update the progress bar
         for (int i = 0; i < ForgroundProgressBar.Length; i++)
         {
-            ForgroundProgressBar[i].fillAmount = fillAmount[i];
+            ForgroundProgressBar[i].fillAmount = Mathf.Clamp(ForgroundProgressBar[i].fillAmount, min, max);
         }
     }
 
     public void AddFillAmount(float amount, int index)
     {
-        fillAmount[index] += amount;
+        ForgroundProgressBar[index].fillAmount += amount;
         Update();
     }
 
     public void RemoveFillAmount(float amount, int index)
     {
-        fillAmount[index] -= amount;
+        ForgroundProgressBar[index].fillAmount -= amount;
         Update();
+    }
+
+    public float getFillAmount(int index)
+    {
+        return ForgroundProgressBar[index].fillAmount;
     }
 
     // public void AddFillAmountVampire(float amount)

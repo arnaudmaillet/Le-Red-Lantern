@@ -15,8 +15,16 @@ public class ChoiceLabelController : MonoBehaviour, IPointerClickHandler, IPoint
     private ChoiceController controller;
     private bool isAnimated;
 
+    private float pirateValue;
+    private float vampireValue;
+    private float copsValue;
+
+    private ProgressBarController progressBarController;
+
+
     void Awake()
     {
+        progressBarController = FindObjectOfType<ProgressBarController>();
         textMesh = GetComponent<TextMeshProUGUI>();
         textMesh.color = defaultColor;
     }
@@ -35,11 +43,16 @@ public class ChoiceLabelController : MonoBehaviour, IPointerClickHandler, IPoint
         Vector3 position = textMesh.rectTransform.localPosition;
         position.y = y;
         textMesh.rectTransform.localPosition = position;
-    }
+
+        pirateValue = label.pirateValue;
+        vampireValue = label.vampireValue;
+        copsValue = label.copsValue;
+        // Debug.Log("label: " + label.label + "Pirate: " + pirateValue + " Vampire: " + vampireValue + " Cops: " + copsValue);
+}
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        controller.PerformChoice(scene, isAnimated: isAnimated);
+        controller.PerformChoice(scene, isAnimated: isAnimated, pirateValue: pirateValue, vampireValue: vampireValue, copsValue: copsValue);
     }
 
     public void OnPointerEnter(PointerEventData eventData)

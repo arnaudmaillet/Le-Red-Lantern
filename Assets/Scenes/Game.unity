@@ -1429,7 +1429,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  min: 0
+  min: 0.5
   max: 1
 --- !u!222 &4783768616127675820
 CanvasRenderer:

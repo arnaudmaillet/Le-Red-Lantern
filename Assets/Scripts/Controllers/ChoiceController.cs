@@ -39,9 +39,9 @@ public class ChoiceController : MonoBehaviour
         rectTransform.sizeDelta = size;
     }
 
-    public void PerformChoice(StoryScene scene, bool isAnimated = true)
+    public void PerformChoice(StoryScene scene, bool isAnimated = true, float pirateValue = 0, float vampireValue = 0, float copsValue = 0)
     {
-        gameController.PlayScene(scene, isAnimated: isAnimated);
+        gameController.PlayScene(scene, isAnimated: isAnimated, pirateValue: pirateValue, vampireValue: vampireValue, copsValue: copsValue);
         animator.SetTrigger("Hide");
     }
 
