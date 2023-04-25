@@ -13,5 +13,8 @@ public class ChooseScene : GameScene
         public string label;
         public StoryScene nextScene;
         public bool fade;
+        public float vampireBar;
+        public float policeBar;
+        public float pirateBar;
     }
 }

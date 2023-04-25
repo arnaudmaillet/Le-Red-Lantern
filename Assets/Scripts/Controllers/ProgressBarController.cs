@@ -10,7 +10,7 @@ public class ProgressBarController : MonoBehaviour
 
     public float FillAmount
     {
-        get { return fillAmount; }
+        get { return ForgroundProgressBar.fillAmount; }
         set { fillAmount = value; }
     }
 
@@ -32,7 +32,7 @@ public class ProgressBarController : MonoBehaviour
 
     public void ResetFillAmount()
     {
-        fillAmount = 0;
+        fillAmount = 0.05F;
         Update();
     }
 

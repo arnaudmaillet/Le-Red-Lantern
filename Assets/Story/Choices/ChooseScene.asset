@@ -16,6 +16,12 @@ MonoBehaviour:
   - label: 1 - Le manger
     nextScene: {fileID: 11400000, guid: d2b3998794d114059a3b81dd5cf2a39e, type: 2}
     fade: 0
+    vampireBar: 0.1
+    policeBar: 0.1
+    pirateBar: 0.5
   - label: 2 - Lui repondre "Tu est gros, tu ressembles a une vache"
     nextScene: {fileID: 11400000, guid: b6c624d2d59f642ae9c9fd7486915851, type: 2}
     fade: 1
+    vampireBar: 0.1
+    policeBar: 0.5
+    pirateBar: 0.1

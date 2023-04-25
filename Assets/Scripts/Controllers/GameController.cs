@@ -13,9 +13,9 @@ public class GameController : MonoBehaviour
     public SpriteSwitcher background;
     public ChoiceController choiceController;
     public AudioController audioController;
+    public BarController barController;
 
     public DataHolder data;
-
     public string menuScene;
 
     // Private
@@ -98,15 +98,20 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void PlayScene(GameScene scene, int sentenceIndex = -1, bool isAnimated = true)
+    public void PlayScene(GameScene scene, int sentenceIndex = -1, bool isAnimated = true, float pirateBar = 0, float vampireBar = 0, float policeBar = 0)
     {
-        StartCoroutine(SwitchScene(scene, sentenceIndex, isAnimated));
+        StartCoroutine(SwitchScene(scene, sentenceIndex, isAnimated, pirateBar, vampireBar, policeBar));
     }
 
-    private IEnumerator SwitchScene(GameScene scene, int sentenceIndex = -1, bool isAnimated = true)
+    private IEnumerator SwitchScene(GameScene scene, int sentenceIndex = -1, bool isAnimated = true, float pirateBar = 0, float vampireBar = 0, float policeBar = 0)
     {
         state = State.ANIMATE;
         currentScene = scene;
+
+        barController.SetPirateBar(barController.GetPirateBar() + pirateBar);
+        barController.SetPoliceBar(barController.GetPoliceBar() + policeBar);
+        barController.SetVampireBar(barController.GetVampireBar() + vampireBar);
+
         if (isAnimated)
         {
             scriptBox.Hide();

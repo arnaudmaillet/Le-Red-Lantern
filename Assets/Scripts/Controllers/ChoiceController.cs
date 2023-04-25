@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -40,9 +41,9 @@ public class ChoiceController : MonoBehaviour
         rectTransform.sizeDelta = size;
     }
 
-    public void PerformChoice(StoryScene scene, bool isAnimated = true)
+    public void PerformChoice(StoryScene scene, bool isAnimated = true, float pirateBar = 0, float vampireBar = 0, float policeBar = 0)
     {
-        gameController.PlayScene(scene, isAnimated: isAnimated);
+        gameController.PlayScene(scene, isAnimated: isAnimated, pirateBar: pirateBar, vampireBar: vampireBar, policeBar: policeBar);
         animator.SetTrigger("Hide");
     }
 
