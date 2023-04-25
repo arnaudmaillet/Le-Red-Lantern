@@ -22,25 +22,32 @@ public class ProgressBarController : MonoBehaviour
         }
     }
 
-    void Update()
+    public void UpdateFillAmount(float amount, int index)
     {
-        // update the progress bar
-        for (int i = 0; i < ForgroundProgressBar.Length; i++)
+        if (amount < 0)
         {
-            ForgroundProgressBar[i].fillAmount = Mathf.Clamp(ForgroundProgressBar[i].fillAmount, min, max);
+            amount = Mathf.Abs(amount);
+            if (ForgroundProgressBar[index].fillAmount - amount < min)
+                ForgroundProgressBar[index].fillAmount = min;
+            else
+                ForgroundProgressBar[index].fillAmount -= amount;
+        }
+        else{
+            if (ForgroundProgressBar[index].fillAmount + amount > max)
+                ForgroundProgressBar[index].fillAmount = max;
+            else
+                ForgroundProgressBar[index].fillAmount += amount;
         }
     }
 
     public void AddFillAmount(float amount, int index)
     {
         ForgroundProgressBar[index].fillAmount += amount;
-        Update();
     }
 
     public void RemoveFillAmount(float amount, int index)
     {
         ForgroundProgressBar[index].fillAmount -= amount;
-        Update();
     }
 
     public float getFillAmount(int index)
