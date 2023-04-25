@@ -15,9 +15,9 @@ public class ChoiceLabelController : MonoBehaviour, IPointerClickHandler, IPoint
     private ChoiceController controller;
     private bool isAnimated;
 
-    private float pirateValue;
     private float vampireValue;
     private float copsValue;
+    private float pirateValue;
 
     private ProgressBarController progressBarController;
 
@@ -44,9 +44,9 @@ public class ChoiceLabelController : MonoBehaviour, IPointerClickHandler, IPoint
         position.y = y;
         textMesh.rectTransform.localPosition = position;
 
-        pirateValue = label.pirateValue;
         vampireValue = label.vampireValue;
         copsValue = label.copsValue;
+        pirateValue = label.pirateValue;
         // Debug.Log("label: " + label.label + "Pirate: " + pirateValue + " Vampire: " + vampireValue + " Cops: " + copsValue);
 }
 
