@@ -27,17 +27,7 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        // ----------------- test progressBar
         progressBarController = FindObjectOfType<ProgressBarController>();
-        // progressBarController.AddFillAmount(0.4f, 1);
-        // progressBarController.AddFillAmount(0.1f, 2);
-        // Debug.Log("Vampire: " + progressBarController.fillAmount[0]);
-        // Debug.Log("Police: " + progressBarController.fillAmount[1]);
-        // Debug.Log("Pirate: " + progressBarController.fillAmount[2]);
-        // progressBarController.RemoveFillAmount(0.1f, 1);
-        // Debug.Log("Police: " + progressBarController.fillAmount[1]);
-        // // ----------------- test progressBar
-
 
         if (SaveManager.IsGameSaved())
         {
@@ -127,10 +117,6 @@ public class GameController : MonoBehaviour
         state = State.ANIMATE;
         currentScene = scene;
 
-        // Debug.Log("Vampire: " + vampireValue);
-        // Debug.Log("Police: " + copsValue);
-        // Debug.Log("Pirate: " + pirateValue);
-        // add Values to progressBar
         progressBarController.UpdateFillAmount(vampireValue, 0);
         progressBarController.UpdateFillAmount(copsValue, 1);
         progressBarController.UpdateFillAmount(pirateValue, 2);
