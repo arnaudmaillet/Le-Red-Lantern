@@ -14,7 +14,7 @@ public class ChooseScene : GameScene
         public StoryScene nextScene;
         public bool fade;
         public float vampireValue;
-        public float pirateValue;
         public float copsValue;
+        public float pirateValue;
     }
 }

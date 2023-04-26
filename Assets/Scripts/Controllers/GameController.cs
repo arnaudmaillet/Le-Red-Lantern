@@ -61,6 +61,11 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            SceneManager.LoadScene("End");
+        }
+
         if (state == State.IDLE)
         {
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
@@ -126,9 +131,9 @@ public class GameController : MonoBehaviour
         // Debug.Log("Police: " + copsValue);
         // Debug.Log("Pirate: " + pirateValue);
         // add Values to progressBar
-        progressBarController.AddFillAmount(vampireValue, 0);
-        progressBarController.AddFillAmount(pirateValue, 1);
-        progressBarController.AddFillAmount(copsValue, 2);
+        progressBarController.UpdateFillAmount(vampireValue, 0);
+        progressBarController.UpdateFillAmount(copsValue, 1);
+        progressBarController.UpdateFillAmount(pirateValue, 2);
 
         if (isAnimated)
         {

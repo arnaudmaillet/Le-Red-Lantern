@@ -26,7 +26,6 @@ public class StartMenuController : MonoBehaviour
     private void Start(){
         animator = GetComponent<Animator>();
 
-
         // affiche le volume de musicMixer
         float volume = 0;
         musicMixer.GetFloat("volume", out volume);
