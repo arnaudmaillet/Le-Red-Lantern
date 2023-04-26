@@ -15,24 +15,59 @@ MonoBehaviour:
   background: {fileID: 21300000, guid: 0cf37199378e444d48d7b046c20b8cc8, type: 3}
   nextScene: {fileID: 11400000, guid: b8f168aafc9cc42099ebe08a8661ab8d, type: 2}
   sentences:
-  - speaker: {fileID: 11400000, guid: 3d8da82bf166f4c1097e262cdcd9e647, type: 2}
-    text: Salut ! fvdsugrigsrg r rwaghrwiag rghuhgrghuri gfhdugheriug iuhgrwhu grruegerughrrrgegrg
-      erg ehgegeg e g er egherhgr e eeg
+  - speaker: {fileID: 11400000, guid: 907eda3eaf1b649629618ccd21bf933c, type: 2}
+    text: Bienvenue dans mon bar, mon ami. Je peux vous servir quelque chose ?
+    audio: {fileID: 0}
     actions:
+    - speaker: {fileID: 11400000, guid: 907eda3eaf1b649629618ccd21bf933c, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: 500, y: 0}
+      moveSpeed: 0
     - speaker: {fileID: 11400000, guid: 3d8da82bf166f4c1097e262cdcd9e647, type: 2}
       spriteIndex: 0
       actionType: 1
-      coords: {x: 250, y: 0}
+      coords: {x: -900, y: 0}
       moveSpeed: 0
     music: {fileID: 8300000, guid: 0252b8c63d9c24a52a170f6395524e60, type: 3}
     sound: {fileID: 0}
-  - speaker: {fileID: 11400000, guid: 2b9b3a12c78fe4780bac346fe73d7551, type: 2}
-    text: Bonjour !
+  - speaker: {fileID: 11400000, guid: 3d8da82bf166f4c1097e262cdcd9e647, type: 2}
+    text: "Un verre de rhum, s'il vous pla\xEEt. Et ne vous inqui\xE9tez pas, je
+      paierai. Je ne suis pas comme ces autres pirates qui aiment voler tout ce qu'ils
+      peuvent."
+    audio: {fileID: 0}
     actions:
     - speaker: {fileID: 11400000, guid: 3d8da82bf166f4c1097e262cdcd9e647, type: 2}
       spriteIndex: 0
-      actionType: 3
-      coords: {x: 250, y: 0}
-      moveSpeed: 0
+      actionType: 2
+      coords: {x: 0, y: 0}
+      moveSpeed: 0.2
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 907eda3eaf1b649629618ccd21bf933c, type: 2}
+    text: "Je suis heureux de l'entendre. Vous n'\xEAtes pas de ceux qui aiment causer
+      des ennuis, n'est-ce pas ?"
+    audio: {fileID: 0}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 3d8da82bf166f4c1097e262cdcd9e647, type: 2}
+    text: "Oh, je pr\xE9f\xE8re boire et m'amuser plut\xF4t que de chercher des ennuis.
+      Mais parfois, on ne peut pas \xE9viter les conflits."
+    audio: {fileID: 0}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 907eda3eaf1b649629618ccd21bf933c, type: 2}
+    text: Je vois.
+    audio: {fileID: 0}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 3d8da82bf166f4c1097e262cdcd9e647, type: 2}
+    text: "Bien s\xFBr. Je suis nouveau dans cette ville et je ne connais personne
+      ici. Je suis curieux de savoir ce qui se passe."
+    audio: {fileID: 0}
+    actions: []
     music: {fileID: 8300000, guid: 0252b8c63d9c24a52a170f6395524e60, type: 3}
     sound: {fileID: 0}

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03501001c89614ec9ab426997647cc35, type: 3}
+  m_Name: Vampire
+  m_EditorClassIdentifier: 
+  speakerName: 
+  textColor: {r: 0.92370224, g: 0, b: 1, a: 0}
+  sprites:
+  - {fileID: 21300000, guid: daad20804428a4b9098006c757bca936, type: 3}
+  - {fileID: 21300000, guid: 4e383de45e28245de9d885e6d0b03374, type: 3}
+  - {fileID: 21300000, guid: 7e6c9c806caf74dcaad34b66f22d41c1, type: 3}
+  - {fileID: 21300000, guid: 99d912e85663f48b99f0ec9e36cdf9c6, type: 3}
+  - {fileID: 21300000, guid: 04db1e02c29094dd58efb497642ba0b6, type: 3}
+  prefab: {fileID: 0}
