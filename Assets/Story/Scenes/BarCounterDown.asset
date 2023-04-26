@@ -24,7 +24,7 @@ MonoBehaviour:
       actionType: 1
       coords: {x: 250, y: 0}
       moveSpeed: 0
-    music: {fileID: 8300000, guid: 9b7ac47b9eaf04449a6611a9c25a14f8, type: 3}
+    music: {fileID: 8300000, guid: 0252b8c63d9c24a52a170f6395524e60, type: 3}
     sound: {fileID: 0}
   - speaker: {fileID: 11400000, guid: 2b9b3a12c78fe4780bac346fe73d7551, type: 2}
     text: ...
@@ -46,5 +46,5 @@ MonoBehaviour:
       actionType: 3
       coords: {x: 250, y: 0}
       moveSpeed: 0
-    music: {fileID: 8300000, guid: 9b7ac47b9eaf04449a6611a9c25a14f8, type: 3}
+    music: {fileID: 8300000, guid: 0252b8c63d9c24a52a170f6395524e60, type: 3}
     sound: {fileID: 0}

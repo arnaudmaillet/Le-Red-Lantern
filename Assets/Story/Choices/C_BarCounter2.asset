@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ced96548e4348ad84fe4400a4188a5, type: 3}
+  m_Name: C_BarCounter2
+  m_EditorClassIdentifier: 
+  labels:
+  - label: "1 - Hmm, cela d\xE9pend. Je ne veux pas risquer ma s\xE9curit\xE9 ou
+      ma r\xE9putation. Mais si vous \xEAtes pr\xEAts \xE0 payer le prix juste, je
+      pourrais peut-\xEAtre vous aider."
+    nextScene: {fileID: 11400000, guid: 4da4e5cf8295d465e9f102b3bf78563b, type: 2}
+    fade: 0
+    vampireValue: 0
+    pirateValue: 0.1
+    copsValue: 0
+  - label: 2- Non, merci !
+    nextScene: {fileID: 11400000, guid: 4da4e5cf8295d465e9f102b3bf78563b, type: 2}
+    fade: 0
+    vampireValue: 0
+    pirateValue: -0.1
+    copsValue: 0
